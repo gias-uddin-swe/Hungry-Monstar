@@ -26,9 +26,8 @@ function displayItem(data) {
     subDiv.innerHTML = foodNameTemplate;
     mainDiv.appendChild(subDiv);
     document.getElementById("search-box").value = "";
-
     // if input value not equal to the result
-    if (checkValue === " ") {
+    if (checkValue === " " || checkValue == "") {
       displayBlock("main-Div", "none");
       displayBlock("error-message", "block");
     }
