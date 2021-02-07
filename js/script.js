@@ -1,11 +1,21 @@
 //search  button click handler
 const foodName = document.getElementById("search-box").value;
+
 document.getElementById("search-btn").addEventListener("click", function () {
   const foodName = document.getElementById("search-box").value;
+
   const url = `https://www.themealdb.com/api/json/v1/1/search.php?f&s=${foodName}`;
   fetch(url)
     .then((res) => res.json())
-    .then((data) => displayItem(data));
+
+    .then((data) => {
+      if (foodName === " " || foodName == "" || !isNaN(foodName)) {
+        displayBlock("main-Div", "none");
+        displayBlock("error-message", "block");
+      } else {
+        displayItem(data);
+      }
+    });
   document.getElementById("main-Div").innerHTML = "";
 });
 
@@ -26,11 +36,6 @@ function displayItem(data) {
     subDiv.innerHTML = foodNameTemplate;
     mainDiv.appendChild(subDiv);
     document.getElementById("search-box").value = "";
-    // if input value not equal to the result
-    if (checkValue === " " || checkValue == "") {
-      displayBlock("main-Div", "none");
-      displayBlock("error-message", "block");
-    }
   });
 }
 //display food details in the Top
