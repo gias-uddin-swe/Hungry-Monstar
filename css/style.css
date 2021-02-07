@@ -54,10 +54,18 @@
 #food-details {
   display: none;
   box-shadow: 10px 10px 20px gray;
-  width: 255px;
+  width: 355px;
   height: 590px;
   margin: auto;
 }
+#food-details h1 {
+  font-size: 26px;
+}
+#food-details img {
+  width: 355px;
+  height: 250px;
+}
+
 #search-item {
   float: left;
   margin: 10px;

@@ -17,12 +17,12 @@ function displayItem(data) {
 
     // if input value not equal to the result
 
-    if (checkValue != foodName.strMeal) {
-      alert("you didn't input Full name");
-      setTimeout(function () {
-        document.getElementById("search-box").focus();
-      }, 100);
-    }
+    // if (checkValue != foodName.strMeal) {
+    //   alert("you didn't input Full name");
+    //   setTimeout(function () {
+    //     document.getElementById("search-box").focus();
+    //   }, 100);
+    // }
 
     const mainDiv = document.getElementById("main-Div");
     const subDiv = document.createElement("div");
