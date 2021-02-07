@@ -15,15 +15,6 @@ function displayItem(data) {
   data.meals.forEach((foodName) => {
     const checkValue = document.getElementById("search-box").value;
 
-    // if input value not equal to the result
-
-    // if (checkValue != foodName.strMeal) {
-    //   alert("you didn't input Full name");
-    //   setTimeout(function () {
-    //     document.getElementById("search-box").focus();
-    //   }, 100);
-    // }
-
     const mainDiv = document.getElementById("main-Div");
     const subDiv = document.createElement("div");
     subDiv.className = "sub-div";
@@ -35,10 +26,15 @@ function displayItem(data) {
     subDiv.innerHTML = foodNameTemplate;
     mainDiv.appendChild(subDiv);
     document.getElementById("search-box").value = "";
+
+    // if input value not equal to the result
+    if (checkValue === " ") {
+      displayBlock("main-Div", "none");
+      displayBlock("error-message", "block");
+    }
   });
 }
 //display food details in the Top
-
 const displayFoodDetails = (name) => {
   const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`;
   fetch(url)

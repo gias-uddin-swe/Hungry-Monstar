@@ -87,3 +87,6 @@
 }
 #search-section {
 }
+#error-message {
+  display: none;
+}
