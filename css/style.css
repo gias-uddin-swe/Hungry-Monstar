@@ -53,6 +53,10 @@
 }
 #food-details {
   display: none;
+  box-shadow: 10px 10px 20px gray;
+  width: 255px;
+  height: 590px;
+  margin: auto;
 }
 #search-item {
   float: left;

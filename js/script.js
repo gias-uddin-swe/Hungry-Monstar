@@ -6,15 +6,24 @@ document.getElementById("search-btn").addEventListener("click", function () {
   fetch(url)
     .then((res) => res.json())
     .then((data) => displayItem(data));
+  document.getElementById("main-Div").innerHTML = "";
 });
+
+// display food item
+
 function displayItem(data) {
   data.meals.forEach((foodName) => {
-    // console.log(foodName.strMeal);
     const checkValue = document.getElementById("search-box").value;
 
+    // if input value not equal to the result
+
     if (checkValue != foodName.strMeal) {
-      confirm("you didn't input Full name");
+      alert("you didn't input Full name");
+      setTimeout(function () {
+        document.getElementById("search-box").focus();
+      }, 100);
     }
+
     const mainDiv = document.getElementById("main-Div");
     const subDiv = document.createElement("div");
     subDiv.className = "sub-div";
@@ -25,8 +34,11 @@ function displayItem(data) {
           `;
     subDiv.innerHTML = foodNameTemplate;
     mainDiv.appendChild(subDiv);
+    document.getElementById("search-box").value = "";
   });
 }
+//display food details in the Top
+
 const displayFoodDetails = (name) => {
   const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`;
   fetch(url)
@@ -44,6 +56,8 @@ const displayFoodDetails = (name) => {
       sum("li-5", data.meals[0].strIngredient5);
       sum("li-6", data.meals[0].strIngredient6);
       sum("li-7", data.meals[0].strIngredient7);
+      sum("li-8", data.meals[0].strIngredient8);
+      sum("li-9", data.meals[0].strIngredient9);
     });
 };
 // common function for innerTex
