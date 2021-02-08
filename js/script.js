@@ -58,7 +58,8 @@ const displayFoodDetails = (name) => {
       sum("li-7", data.meals[0].strIngredient7);
       sum("li-8", data.meals[0].strIngredient8);
       sum("li-9", data.meals[0].strIngredient9);
-    });
+    })
+    .catch((error) => displayError(error));
 };
 // common function for innerTex
 const sum = (id, item) => {
@@ -67,4 +68,8 @@ const sum = (id, item) => {
 //control display function
 const displayBlock = (id, name) => {
   document.getElementById(id).style.display = name;
+};
+const displayError = (error) => {
+  displayBlock("main-Div", "none");
+  displayBlock("error-message", "block");
 };

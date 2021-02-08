@@ -35,7 +35,7 @@
   text-align: center;
   color: magenta;
   font-weight: 700;
-  width: 290px;
+  width: 300px;
   height: 350px;
   box-shadow: 10px 10px 20px gray;
   border-radius: 10px;
@@ -43,6 +43,7 @@
 }
 .sub-div img {
   width: 100%;
+  height: 200px;
   border-radius: 10px;
 }
 #image {
@@ -55,15 +56,17 @@
   display: none;
   box-shadow: 10px 10px 20px gray;
   width: 355px;
-  height: 590px;
+  height: 480px;
   margin: auto;
+  border-radius: 10px;
+  padding: 10px;
 }
 #food-details h1 {
-  font-size: 26px;
+  font-size: 24px;
 }
 #food-details img {
-  width: 355px;
-  height: 250px;
+  width: 100%;
+  height: 200px;
 }
 
 #search-item {
